@@ -1,0 +1,46 @@
+$ git init
+#.git/config contains repo configuration
+#global configuration file is in ~/.netrc
+
+#create global configuration file with following content
+#-------------------
+#machine github.com
+#login pavanvidem
+#password mypassword
+#-------------------
+
+$ git add README_workshop
+$ git status
+$ git commit -m "intial commit"
+#changing this file for "git diff"
+$ git diff
+$ gitg #will open the repository in a GUI
+$ touch .password 
+# I do not want to commit ".password" to git. Then create a file named ".gitignore" and add the files to be ignored
+$ vim .gitignore
+$ git add .gitignore
+$ git commit -m "Addding .gitignore" 
+
+# "NEVER" work on master-branch
+# Create a new branch and give it a meaningful name
+# fork others repository
+$ git clone https://github.com/pavanvidem/github_tutorial.git
+$ vim greetings_from_Pavan
+$ git add greetings_from_Pavan 
+$ git commit -m "message from Pavan"
+$ git push origin master
+# then create a pull request on github
+# to see the changes from other users, in my github do the following
+# first add the upstream master repository
+$ git remote add upstream https://github.com/bgruening/github_tutorial.git 
+# pull changes from upstream branch
+$ git pull upstream master
+# Create a new branch
+$ git branch test_branch
+# change the branch
+$ git checkout test_branch 
+$ vim more_greetings_from_Pavan
+$ git add more_greetings_from_Pavan
+$ git commit -m "more greetings"
+$ git push .
+
